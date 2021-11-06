@@ -1,0 +1,40 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.calculator {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 400px;
+	height: 600px;
+}
+
+.output {
+	height: 100px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: grey;
+	color: white;
+}
+
+.buttons {
+	display: grid;
+	flex: 1;
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	height: 100%;
+	width: 100%;
+}
+
+#add {
+	grid-row: 2 / 4;
+	grid-column: 4 / 5;
+}
+
+#equals {
+	grid-row: 4 / 6;
+	grid-column: 4 / 5;
+}
