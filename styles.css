@@ -1,3 +1,7 @@
+body {
+	font-family: 'Courier New', Courier, monospace;
+}
+
 .wrapper {
 	display: flex;
 	justify-content: center;
@@ -10,14 +14,31 @@
 	height: 600px;
 }
 
-.output {
+#display {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
 	height: 100px;
 	width: 100%;
-	margin: 0;
-	padding: 0;
-	border: 0;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
 	background-color: grey;
+}
+
+#display > * {
+	margin: 10px;	
+	font-weight: bold;
 	color: white;
+}
+
+#output {
+	font-size: 32px;	
+}
+
+#history {
+	font-size: 18px;
 }
 
 .buttons {
@@ -27,6 +48,12 @@
 	grid-template-columns: repeat(4, 1fr);
 	height: 100%;
 	width: 100%;
+}
+
+button {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 24px;
+	font-weight: bold;
 }
 
 #add {
