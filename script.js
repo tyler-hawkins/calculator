@@ -21,20 +21,21 @@ const addListeners = () => {
 				operate(operator, val1, val2);
 			}
 			operator = symbol.id;
-		});
-		
+		});		
 	});
+
 	Array.from(document.getElementsByClassName("number")).forEach(number => {
 		number.addEventListener("click", () => {
 			let numberClicked = parseInt(number.id);
 			if (val1 != undefined && operator != undefined) {
-				val2 = parseFloat((val2 || "").toString() + numberClicked);
+				val2 = (val2 || "").toString() + numberClicked;
 			} else {
-				val1 = parseFloat((val1 || "").toString() + numberClicked);
+				val1 = (val1 || "").toString() + numberClicked;
 			}
 			display();
 		});
 	});
+
 	Array.from(document.getElementsByClassName("action")).forEach(action => {
 		action.addEventListener("click", () => {
 			switch(action.id) {
@@ -88,18 +89,29 @@ const negate = a => {
 
 function operate(operator, a, b) {
 	console.log(operator, a, b);
-	const result = operators[operator](a, b);	
+	if (operator == undefined) {
+		return;
+	}
+	const result = parseFloat(operators[operator](parseFloat(a), parseFloat(b)));
 	val1 = result;	
 	val2 = undefined;
 	display(result);
 }
 
 function addDecimal() {
-	
+	if (document.getElementById("output").innerText.includes(".")) {
+		return;
+	}
+	if (val1 != undefined && operator != undefined) {
+		val2 = (val2 || "").toString() + ".";
+	} else {
+		val1 = (val1 || "").toString() + ".";
+	}
+	display();
 }
 
 function display() {
-	document.getElementById("output").innerHTML = val2 || val1 || 0;
+	document.getElementById("output").innerHTML = (val2 && val2.toString().substring(0, 7)) || (val1 && val1.toString().substring(0, 7)) || 0;
 	document.getElementById("history").innerHTML = calcHistory || "";
 }
 
