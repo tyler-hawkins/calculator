@@ -106,7 +106,7 @@ function addDecimal() {
 }
 
 function display() {
-	document.getElementById("output").innerHTML = (val2 && val2.toString().substring(0, 7)) || (val1 && val1.toString().substring(0, 7)) || 0;
+	document.getElementById("output").innerHTML = (val2 && val2.toString().substring(0, 13)) || (val1 && val1.toString().substring(0, 13)) || 0;
 	document.getElementById("history").innerHTML = calcHistory || "";
 }
 
