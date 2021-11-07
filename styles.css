@@ -12,6 +12,9 @@ body {
 	flex-flow: column nowrap;
 	width: 400px;
 	height: 600px;
+	background-color: #ffe4c4;
+	padding: 12px;
+	border-radius: 8px;
 }
 
 #display {
@@ -21,20 +24,19 @@ body {
 	align-items: flex-end;
 	height: 100px;
 	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	background-color: grey;
+	margin-bottom: 8px;
+	background-color: #e4d9cc;
+	border-radius: 8px;
 }
 
 #display > * {
-	margin: 10px;	
+	margin: 10px 10px 5px 10px;	
 	font-weight: bold;
-	color: white;
+	color: gray;
 }
 
 #output {
-	font-size: 32px;	
+	font-size: 48px;	
 }
 
 #history {
@@ -46,14 +48,35 @@ body {
 	flex: 1;
 	grid-template-rows: repeat(5, 1fr);
 	grid-template-columns: repeat(4, 1fr);
+	gap: 2px;
 	height: 100%;
 	width: 100%;
 }
 
+.operator {
+	background-color: #ffa07a;
+	border-color: #d68c6e;
+}
+
+.action {
+	background-color: #fa8072;
+	border-color: #ca7268;
+}
+
+.number {
+	background-color: #fafad1;
+	border-color: #dbdbaa;
+}
+
 button {
 	font-family: 'Courier New', Courier, monospace;
-	font-size: 24px;
+	font-size: 36px;
 	font-weight: bold;
+	border-right: 4px solid;
+	border-bottom: 5px solid;
+	border-top: none;
+	border-left: none;
+	border-radius: 8px;
 }
 
 #add {
