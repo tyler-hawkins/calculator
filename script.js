@@ -4,11 +4,6 @@ let operator;
 let calcHistory;
 
 /*TODO: 
-Add support for inputting decimals
-Disable decimal button if there's already a decimal in the number
-Truncate very long decimal results
-Make "=" repeat last operation on result, val2
-Style the calculator
 Add a backspace button
 Add keyboard support
 Add calculation history
